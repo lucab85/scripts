@@ -1,6 +1,6 @@
 #!/bin/bash
 
-COUNTER=149
+COUNTER=1
 while [  $COUNTER -lt 150 ]; do
 	echo Salvo pagina $COUNTER
 
