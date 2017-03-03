@@ -15,7 +15,7 @@ locate "AlertScriptsPath" directory in "/etc/zabbix/zabbix_server.conf"
 Ubuntu 16.04: AlertScriptsPath=/usr/lib/zabbix/alertscripts
 
 step 2:
-create "zabbixMailScript.sh" and give execution script
+create "zabbixMailScript.sh" and give execution flag
 
 	#!/bin/bash
 	
