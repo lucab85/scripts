@@ -11,6 +11,7 @@ Initialize Windows performance counters.
 	Control Panel > Administrative Tools > Performance
 
 Counters: 
+
 	MSSQL$SQLEXPRESS:Access Methods
 	MSSQL$SQLEXPRESS:Buffer Manager
 	MSSQL$SQLEXPRESS:Databases(_Total)
