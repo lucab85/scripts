@@ -3085,7 +3085,7 @@ Note: For “Lock Wait Time” it is recommended to look beyond the Avg value.  
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template App MSSQL Express:perf_counter[&quot;\MSSQL$SQLEXPRESS:SQL Statistics\SQL Compilations/sec&quot;,300].last()}&gt;0.1*{Template App MSSQL Express:perf_counter[&quot;\MSSQL$SQLEXPRESS:SQL Statistics\Batch Requests/Sec&quot;,300].last()}</expression>
+            <expression>{Template App MSSQL Express:perf_counter[&quot;\MSSQL$SQLEXPRESS:SQL Statistics\SQL Compilations/sec&quot;,300].last()}&gt;1</expression>
             <name>MSSQL:SQL Statistics SQL Compilations/sec</name>
             <url>https://msdn.microsoft.com/en-us/ms190911</url>
             <status>0</status>
@@ -3095,7 +3095,7 @@ Note: For “Lock Wait Time” it is recommended to look beyond the Avg value.  
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template App MSSQL Express:perf_counter[&quot;\MSSQL$SQLEXPRESS:SQL Statistics\SQL Re-Compilations/sec&quot;,300].last()}&gt;0.1*{Template App MSSQL Express:perf_counter[&quot;\MSSQL$SQLEXPRESS:SQL Statistics\SQL Compilations/sec&quot;,300].last()}</expression>
+            <expression>{Template App MSSQL Express:perf_counter[&quot;\MSSQL$SQLEXPRESS:SQL Statistics\SQL Re-Compilations/sec&quot;,300].last()}&gt;1</expression>
             <name>MSSQL:SQL Statistics SQL Re-Compilations/sec</name>
             <url>https://msdn.microsoft.com/en-us/ms190911</url>
             <status>0</status>
