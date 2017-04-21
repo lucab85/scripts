@@ -1,0 +1,3 @@
+WORKDIR="."
+DROPBOX_LOCAL_DIR="$WORKDIR/output"
+OUTPUT_FILE_ZIP="zip-output.zip"
