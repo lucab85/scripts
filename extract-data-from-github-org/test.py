@@ -1,4 +1,3 @@
-# from backports import csv
 import io, csv
 from github import Github
 import ConfigParser
