@@ -9,5 +9,6 @@ A collection of scripts to do things.
 * [gpg export for backup](gpg_export/)
 * [latex compile and sync](tex-compile-and-sync/)
 * [remove pdf protections](removepdfprotections/) Use with caution!
-* [ssh load key in agent](ssh-load-key/)
+* [ssh load key in agent](ssh_loadkey/)
+* [ssh append authorized key](ssh_authorizekey/)
 * [zabbix templates for SQLExpress](zabbix/)
