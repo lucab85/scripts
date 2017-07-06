@@ -1,0 +1,12 @@
+pdf:
+  image: tianon/latex
+  script:
+  - xelatex file1.tex
+  - xelatex file2.tex
+  artifacts:
+    paths:
+    - file1.pdf
+    - file2.pdf
+    expire_in: 1 week
+  tags:
+    - docker
