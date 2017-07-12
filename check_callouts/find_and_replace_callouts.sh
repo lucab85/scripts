@@ -1,6 +1,16 @@
 #!/bin/bash
 
-#ar
+for file in `find src/content/ar/ -name "*.md"`
+do
+  sed -i "s/^ملحوظة: /Note: /g" $file
+  sed -i "s/^الحذر: /Caution: /g" $file
+  sed -i "s/^تحذير: /Warning: /g" $file
+  sed -i "s/^نجاح: /Success: /g" $file
+  sed -i "s/^النقطة الأساسية: /Key Point: /g" $file
+  sed -i "s/^المصطلح الرئيسي: /Key Term: /g" $file
+  sed -i "s/^موضوعي: /Objective: /g" $file
+  sed -i "s/^التطبيق التجريبي: /Dogfood: /g" $file
+done
 
 for file in `find src/content/de/ -name "*.md"`
 do
@@ -76,8 +86,29 @@ do
   sed -i "s/^Cibo per cani: /Dogfood: /g" $file
 done
 
-#ja
-#ko
+for file in `find src/content/ja/ -name "*.md"`
+do
+  sed -i "s/^注意: /Note: /g" $file
+  sed -i "s/^あぶない: /Caution: /g" $file
+  sed -i "s/^警告: /Warning: /g" $file
+  sed -i "s/^成功: /Success: /g" $file
+  sed -i "s/^キーポイント: /Key Point: /g" $file
+  sed -i "s/^主要用語: /Key Term: /g" $file
+  sed -i "s/^目的: /Objective: /g" $file
+  sed -i "s/^ドッグフード: /Dogfood: /g" $file
+done
+
+for file in `find src/content/ko/ -name "*.md"`
+do
+  sed -i "s/^노트: /Note: /g" $file
+  sed -i "s/^주의: /Caution: /g" $file
+  sed -i "s/^경고: /Warning: /g" $file
+  sed -i "s/^성공: /Success: /g" $file
+  sed -i "s/^핵심: /Key Point: /g" $file
+  sed -i "s/^주요 용어: /Key Term: /g" $file
+  sed -i "s/^목표: /Objective: /g" $file
+  sed -i "s/^개 사료: /Dogfood: /g" $file
+done
 
 for file in `find src/content/nl/ -name "*.md"`
 do
