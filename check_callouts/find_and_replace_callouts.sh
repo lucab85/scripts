@@ -60,7 +60,17 @@ do
   sed -i "s/^אוכל לכלבים: /Dogfood: /g" $file
 done
 
-#hi
+for file in `find src/content/hi/ -name "*.md"`
+do
+  sed -i "s/^ध्यान दें: /Note: /g" $file
+  sed -i "s/^सावधान: /Caution: /g" $file
+  sed -i "s/^चेतावनी: /Warning: /g" $file
+  sed -i "s/^सफलता: /Success: /g" $file
+  sed -i "s/^मुख्य बिंदु: /Key Point: /g" $file
+  sed -i "s/^मुख्य शब्द: /Key Term: /g" $file
+  sed -i "s/^लक्ष्य: /Objective: /g" $file
+  sed -i "s/^कुत्ते का भोजन: /Dogfood: /g" $file
+done
 
 for file in `find src/content/id/ -name "*.md"`
 do
@@ -170,5 +180,26 @@ do
   sed -i "s/^Köpek maması: /Dogfood: /g" $file
 done
 
-#zh-cn
-#zh-tw
+for file in `find src/content/zh-cn/ -name "*.md"`
+do
+  sed -i "s/^注意: /Note: /g" $file
+  sed -i "s/^警告: /Caution: /g" $file
+  sed -i "s/^警告: /Warning: /g" $file
+  sed -i "s/^成功: /Success: /g" $file
+  sed -i "s/^关键: /Key Point: /g" $file
+  sed -i "s/^关键术语: /Key Term: /g" $file
+  sed -i "s/^目的: /Objective: /g" $file
+  sed -i "s/^狗粮: /Dogfood: /g" $file
+done
+
+for file in `find src/content/zh-tw/ -name "*.md"`
+do
+  sed -i "s/^注意: /Note: /g" $file
+  sed -i "s/^警告: /Caution: /g" $file
+  sed -i "s/^警告: /Warning: /g" $file
+  sed -i "s/^成功: /Success: /g" $file
+  sed -i "s/^關鍵: /Key Point: /g" $file
+  sed -i "s/^關鍵術語: /Key Term: /g" $file
+  sed -i "s/^目的: /Objective: /g" $file
+  sed -i "s/^狗糧: /Dogfood: /g" $file
+done
