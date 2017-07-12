@@ -2,6 +2,7 @@
 
 A collection of scripts to do things.
 
+* [Search and replace style callouts](check_callouts/)
 * [convert with Guetzli](bat_guetzli/)
 * [dropbox sync SOCKS5](Dropbox-Sync-SOCKS5/)
 * [download ASML](ilgiornaledivicenza.it/) from ilgiornaledivicenza.it
