@@ -20,3 +20,15 @@ for file in `find src/content/$1/ -name "*.md"`; do
 	done
 	
 done
+
+git checkout "src/content/$1/fundamentals/design-and-ui/input/touch/index.md"
+git checkout "src/content/$1/fundamentals/discovery-and-monetization/payment-request/index.md"
+git checkout "src/content/$1/fundamentals/getting-started/primers/customelements.md"
+git checkout "src/content/$1/fundamentals/getting-started/primers/promises.md"
+git checkout "src/content/$1/fundamentals/getting-started/primers/shadowdom.md"
+git checkout "src/content/$1/fundamentals/security/credential-management/retrieve-credentials.md"
+git checkout "src/content/$1/fundamentals/security/credential-management/store-credentials.md"
+git checkout "src/content/$1/tools/chrome-devtools/inspect-styles/edit-dom.md"
+git checkout "src/content/$1/tools/chrome-devtools/javascript/index.md"
+git checkout "src/content/$1/tools/chrome-devtools/rendering-tools/index.md"
+git checkout "src/content/$1/tools/setup/setup-preprocessors.md"
