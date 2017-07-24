@@ -1,6 +1,10 @@
+#!/usr/bin/python
+# coding: utf-8
+
 import io, csv
 from github import Github
 import ConfigParser
+import string
 
 Config = ConfigParser.ConfigParser()
 
@@ -36,8 +40,9 @@ for i in org.get_members():
 	
 	data = []
 	for j in fields:
-		value = getattr(i, j)
+		value = "%s" % getattr(i, j)
 		try:
+			value = value.replace('\r\n', ' ')
 			value = value.encode("ascii", 'ignore')
 		except AttributeError:
 			pass
