@@ -8,6 +8,9 @@ else
 	lang=$1
 fi
 
-
-for f in *.md; do aspell --lang $lang check $f; done
-for f in *.yaml; do aspell --lang $lang check $f; done
+for f in $(find . -name '*.md' -or -name '*.yaml' | grep -v -e './updates' -e './showcase' -e 'events')
+	do
+	
+		aspell --lang $lang check $f
+		
+	done
