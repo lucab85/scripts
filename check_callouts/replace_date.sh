@@ -1,7 +1,9 @@
 #!/bin/bash
 
 TODAY=$(date +"%Y-%m-%d")
+#FILELIST=$(cat stub.txt)
 FILELIST=$(git status| grep "modified: " | sed -e 's/modified://g' -e 's/new file://g')
+
 
 for file in $FILELIST
 do

@@ -21,3 +21,12 @@ Usage:
  1. Update 'wf_updated_on' field
 
         ./replace_date.sh
+
+
+ 1. Spellcheck (default: English)
+
+        ./do_spellcheck.sh
+
+Setup:
+
+        apt-get install aspell aspell-it aspell-en
