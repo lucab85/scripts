@@ -2,7 +2,6 @@
 
 A collection of scripts to do things.
 
-* [Search and replace style callouts](check_callouts/)
 * [convert with Guetzli](bat_guetzli/)
 * [dropbox sync SOCKS5](Dropbox-Sync-SOCKS5/)
 * [download ASML](ilgiornaledivicenza.it/) from ilgiornaledivicenza.it
@@ -12,6 +11,7 @@ A collection of scripts to do things.
 * [gitlab tools](gitlab/)
 * [gpg export for backup](gpg_export/)
 * [latex compile and sync](tex-compile-and-sync/)
+* [markdown tools to search and replace](md_tools/)
 * [remove pdf protections](removepdfprotections/) Use with caution!
 * [ssh load key in agent](ssh_loadkey/)
 * [ssh append authorized key](ssh_authorizekey/)
