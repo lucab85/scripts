@@ -1,33 +1,71 @@
 #!/bin/bash
 
-# with trailing slash
+# --------- START SETTINGS ---------
+# PATH with trailing slash
 DIR_TMP="tmp/"
-DIR_OUTPUT="out/"
+DIR_PDF="pdf/"
+DIR_ZIP="zip/"
+MAXRETRY=11
+DIFFCHECK=1 # 1 to check nopdf files
+TXT_MSG="msg.txt"
+TXT_PDF="pdf.txt"
+TXT_ZIP="zip.txt"
+# --------- END SETTINGS---------
 
 rm -fr $DIR_TMP
 mkdir -pv $DIR_TMP
-rm -fr $DIR_OUTPUT
-mkdir -pv $DIR_OUTPUT
+rm -fr $DIR_PDF
+mkdir -pv $DIR_PDF
+rm -fr $DIR_ZIP
+mkdir -pv $DIR_ZIP
 
-for f in *.msg; do
-        echo "1. Processing $f file..";
-        msgconvert "$f"
-        rm -f "$f"
-        f_eml=$(basename "$f")
-        f_eml="${f_eml%.*}.eml"
+if [ $DIFFCHECK -eq 1 ]; then
+	ls *.msg > $TXT_MSG
+fi
 
-        echo "2. Processing $f_eml file..";
-        ripmime -i "$f_eml" -d $DIR_TMP;
-        if [ ! -f $DIR_TMP*.pdf ]; then
-           echo "NO PDF INSIDE"
-        fi
-        mv -v $DIR_TMP*.pdf $DIR_OUTPUT
-        
-        if [ -f $DIR_TMP*.zip ]; then
-           echo "FOUND ZIP INSIDE"
-           mv -v $DIR_OUTPUT*.zip $DIR_OUTPUT
-        fi
+for f1 in *.msg; do
+	rm -fr $DIR_TMP*
+	retry=1
+	found_pdf=0
+	found_zip=0
+        while  [ $retry -lt $MAXRETRY ]; do
+		echo "$retry Convert \"$f1\"";
+		msgconvert "$f1"
+		f2=$(basename "$f1")
+		f2="${f2%.*}.eml"
+		ripmime -i "$f2" -d $DIR_TMP;
+		if [ -f $DIR_TMP*.pdf ]; then
+			found_pdf=1
+			mv -v $DIR_TMP*.pdf $DIR_PDF
+			break;
+		fi
+		if [ -f $DIR_TMP*.zip ]; then
+			found_zip=1
+			mv -v $DIR_TMP*.zip $DIR_ZIP
+		fi
+		let retry+=1
+	done
 
-        rm -f "$f_eml"
+	if [ $DIFFCHECK -eq 1 ]; then
+		if [ $found_pdf -eq 1 ]; then
+			echo "FOUND PDF"
+			echo "$f1" >> $TXT_PDF
+		fi
+		if [ $found_zip -eq 1 ]; then
+			echo "FOUND ZIP"
+			echo "$f1" >> $TXT_ZIP
+		fi
+	fi
+
+	rm -f "$f1"
+	rm -f "$f2"
 done
+
 rm -fr $DIR_TMP
+
+if [ $DIFFCHECK -eq 1 ]; then
+	echo "-- DIFF PDF --"
+	diff $TXT_MSG $TXT_PDF
+	echo "-- DIFF ZIP --"
+	diff $TXT_MSG $TXT_ZIP
+fi
