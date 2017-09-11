@@ -3,8 +3,8 @@
 # --------- START SETTINGS ---------
 # PATH with trailing slash
 DIR_TMP="tmp/"
-DIR_PDF="pdf/"
-DIR_ZIP="zip/"
+DIR_PDF="PDF/"
+DIR_ZIP="ZIP/"
 MAXRETRY=11
 DIFFCHECK=1 # 1 to check nopdf files
 TXT_MSG="msg.txt"
@@ -42,6 +42,7 @@ for f1 in *.msg; do
 		if [ -f $DIR_TMP*.zip ]; then
 			found_zip=1
 			mv -v $DIR_TMP*.zip $DIR_ZIP
+			break;
 		fi
 		let retry+=1
 	done
