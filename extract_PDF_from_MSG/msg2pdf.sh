@@ -35,9 +35,16 @@ for f1 in *.msg; do
 		f2="${f2%.*}.eml"
 		ripmime -i "$f2" -d $DIR_TMP;
 		if [ -f $DIR_TMP*.pdf ]; then
-			found_pdf=1
-			mv -v $DIR_TMP*.pdf $DIR_PDF
-			break;
+			pdftotext $DIR_TMP*.pdf &> /dev/null
+			if [ $? -eq 0 ]; then
+				echo $DIR_TMP*.pdf was ok;
+				found_pdf=1
+				mv -v $DIR_TMP*.pdf $DIR_PDF
+				break;
+			else
+				echo $DIR_TMP*.pdf is broken;
+				rm $DIR_TMP*.pdf
+			fi;
 		fi
 		if [ -f $DIR_TMP*.zip ]; then
 			found_zip=1
