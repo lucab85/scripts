@@ -7,7 +7,7 @@ fi
 
 FILELIST="filelist.txt"
 EXCLUDELIST="excludelist.txt"
-BRANCH="spellcheck"
+BRANCH="typo"
 LANGUAGE="en"
 
 i=0
