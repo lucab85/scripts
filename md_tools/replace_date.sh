@@ -4,7 +4,7 @@ TODAY=$(date +"%Y-%m-%d")
 
 if [ "$#" -eq 1 ]
 then
-    FILELIST=$1
+    FILELIST=$(cat $1)
 else
 	FILELIST=$(git status| grep "modified: " | sed -e 's/modified://g' -e 's/new file://g')
 fi
