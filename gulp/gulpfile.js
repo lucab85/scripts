@@ -5,6 +5,7 @@ const newer = require('gulp-newer');
 const imageResize = require('gulp-image-resize')
 const imagemin = require('gulp-imagemin');
 const jpegrecompress = require('imagemin-jpeg-recompress');
+const mozjpeg = require('imagemin-mozjpeg')
 
 var IMG_SRC = 'images/*.{jpg,png,gif,svg}';
 var IMG_NORES_SRC = 'images_noresize/*.{jpg,png,gif}';
@@ -23,8 +24,14 @@ var opts_jpegrecompress = {
 	subsample: 'default',
 	strip: true
 }
+var opts_mozjpeg = {
+	quality: 60,
+	progressive: true
+}
+
 var plugins_imagemin = [
 	jpegrecompress(opts_jpegrecompress),
+//	mozjpeg(opts_mozjpeg),
 	imagemin.optipng({optimizationLevel: 5}),
 	imagemin.gifsicle({interlaced: true}),
 		imagemin.svgo({
@@ -44,7 +51,7 @@ var opts_imageResize = {
 
 gulp.task('images', function () {
     return gulp.src(IMG_SRC)
-		.pipe(newer(IMG_DST))
+//		.pipe(newer(IMG_DST))
 		.pipe(imageResize(opts_imageResize))
         .pipe(imagemin(plugins_imagemin, opts_imagemin))
         .pipe(gulp.dest(IMG_DST))
@@ -52,7 +59,6 @@ gulp.task('images', function () {
 
 gulp.task('images_noresize', function () {
     return gulp.src(IMG_NORES_SRC)
-		.pipe(newer(IMG_DST))
         .pipe(imagemin(plugins_imagemin, opts_imagemin))
         .pipe(gulp.dest(IMG_DST))
 });
