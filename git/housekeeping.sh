@@ -15,7 +15,7 @@ echo "--------------------"
 
 for dir in $(ls)
 do
-	echo "Processing $FOLDER"
+	echo "Processing $dir"
 	cd $dir
 	git checkout master
 	git pull
