@@ -18,6 +18,6 @@ echo "LANG: $lang"
 for f in $filelist
 	do
 	
-		aspell --lang $lang --html-skip="script,style,img,svg" check $f
+		aspell --lang $lang --html-skip="script,style,img,svg" --dont-backup check $f
 		
 	done
