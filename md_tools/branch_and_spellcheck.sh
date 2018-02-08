@@ -5,9 +5,11 @@ if [ "$#" -ne 1 ]; then
 	exit 1
 fi
 
+TODAY=$(date +"%Y%m%d")
 FILELIST="filelist.txt"
 EXCLUDELIST="excludelist.txt"
-BRANCH="typo"
+#BRANCH="typo"
+BRANCH=$TODAY
 LANGUAGE="en"
 
 i=0

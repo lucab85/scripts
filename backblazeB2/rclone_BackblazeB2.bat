@@ -1,0 +1,1 @@
+rclone copy data/ b2:bucket --bwlimit "08:10,50k 12:40,200k 13:50,50k 18:10,100k 19:00,off" -v
