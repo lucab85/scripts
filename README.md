@@ -2,6 +2,7 @@
 
 A collection of scripts to do things.
 
+* [create smb shares](smb_create_shares/) in PowerShell
 * [dropbox sync SOCKS5](Dropbox-Sync-SOCKS5/)
 * [download ASML](ilgiornaledivicenza.it/) from ilgiornaledivicenza.it
 * [encode JPG with Guetzli](bat_guetzli/)
