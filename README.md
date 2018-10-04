@@ -19,3 +19,5 @@ A collection of scripts to do things.
 * [ssh append authorized key](ssh_authorizekey/)
 * [upload to BackBlaze B2 (rclone)](backblazeB2)
 * [zabbix templates for SQLExpress](zabbix/)
+
+Copyright (C) 2018 [Luca Berton](https://lucaberton.it/)
