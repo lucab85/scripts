@@ -41,7 +41,7 @@ cat $FILELIST
 i=$((i+1))
 
 echo "$i. Do spellcheck"
-/home/luke/prj/github/scripts/md_tools/do_spellcheck.sh $FILELIST $LANGUAGE
+/home/lberton/prj/github/scripts/md_tools/do_spellcheck.sh $FILELIST $LANGUAGE
 i=$((i+1))
 
 echo "$i. Delete filelist"
